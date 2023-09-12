@@ -23,12 +23,20 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            resValue("String","Marcos", "HoroscopeApp")
+            buildConfigField("String","BASE_URL", "\"https://newastro.vercel.app/\"")
+        }
+        getByName("debug"){
+            isDebuggable = true
+            resValue("String","Marcos", "[DEBUG] HoroscopeApp")
+            buildConfigField("String","BASE_URL", "\"https://newastro.debug.app/\"")
         }
     }
     compileOptions {
@@ -42,6 +50,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
 }
