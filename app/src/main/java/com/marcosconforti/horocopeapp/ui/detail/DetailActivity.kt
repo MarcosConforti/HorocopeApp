@@ -10,8 +10,18 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.navArgs
 import com.marcosconforti.horocopeapp.R
 import com.marcosconforti.horocopeapp.databinding.ActivityDetailBinding
-import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo
-import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.*
+import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.Aquarius
+import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.Aries
+import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.Cancer
+import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.Capricorn
+import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.Escorpio
+import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.Geminis
+import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.Leo
+import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.Libra
+import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.Pisces
+import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.Sagitarius
+import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.Taurus
+import com.marcosconforti.horocopeapp.domain.model.HoroscopeInfo.Virgo
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
