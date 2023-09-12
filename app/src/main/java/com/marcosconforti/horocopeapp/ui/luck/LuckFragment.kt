@@ -1,6 +1,8 @@
 package com.marcosconforti.horocopeapp.ui.luck
 
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,8 +17,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.marcosconforti.horocopeapp.R
 import com.marcosconforti.horocopeapp.databinding.FragmentLuckBinding
+import com.marcosconforti.horocopeapp.ui.core.listeners.OnSwipeTouchListener
+import com.marcosconforti.horocopeapp.ui.providers.RandomCardProvider
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Random
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class LuckFragment : Fragment() {
@@ -25,6 +30,9 @@ class LuckFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: LuckyViewModel by viewModels()
+
+    @Inject
+    lateinit var randomCardProvider: RandomCardProvider
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,13 +48,42 @@ class LuckFragment : Fragment() {
     }
 
     private fun initUI() {
+        preparePredictions()
         initListeners()
     }
 
-    private fun initListeners() {
-        binding.ivRulete.setOnClickListener {
-            spinRullete()
+    private fun preparePredictions() {
+        val currentluck = randomCardProvider.getLucky()
+        currentluck?.let {luck->
+            val currentPrediction = getString(luck.text)
+            binding.tvLucky.text = currentPrediction
+            binding.ivLuckyCard.setImageResource(luck.image)
+            binding.tvShare.setOnClickListener { shareResult(currentPrediction) }
         }
+    }
+
+    private fun shareResult(prediction:String) {
+        val sendIntent:Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT,prediction)
+            type = "text/plain"
+        }
+        val shareIntent = Intent.createChooser(sendIntent,null)
+        startActivity(shareIntent)
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private fun initListeners() {
+        //binding.ivRulete.setOnClickListener { spinRullete() }
+        binding.ivRulete.setOnTouchListener(object :OnSwipeTouchListener(requireContext()){
+            override fun onSwipeLeft() {
+                spinRullete()
+            }
+
+            override fun onSwipeRight() {
+                spinRullete()
+            }
+        })
     }
 
     private fun spinRullete() {
@@ -54,6 +91,7 @@ class LuckFragment : Fragment() {
         val degree = random.nextInt(1440) + 360
         val animator =
             ObjectAnimator.ofFloat(binding.ivRulete, View.ROTATION, 0f, degree.toFloat())
+
         animator.duration = 2000
         animator.interpolator = DecelerateInterpolator()
         animator.doOnEnd { slideCard() }
