@@ -26,10 +26,22 @@ El temario del curso:
 
 ## Imagenes
 
-![Home](https://github.com/MarcosConforti/HorocopeApp/blob/master/app/src/main/res/drawable/screenshot_home.png).
-![Detail](https://github.com/MarcosConforti/HorocopeApp/blob/master/app/src/main/res/drawable/screenshot_detail.png).
-![LuckReverse](https://github.com/MarcosConforti/HorocopeApp/blob/master/app/src/main/res/drawable/screenshot_luckyone.png).
-![LuckFront](https://github.com/MarcosConforti/HorocopeApp/blob/master/app/src/main/res/drawable/screenshot_luckytwo.png).
+<table>
+  <tr>
+    <td>
+    <img src="https://github.com/MarcosConforti/HorocopeApp/blob/master/app/src/main/res/drawable/screenshot_home.png" alt="Home"  height="500">
+    </td>
+    <td>
+    <img src="https://github.com/MarcosConforti/HorocopeApp/blob/master/app/src/main/res/drawable/screenshot_detail.png" alt="Detail"  height="500">
+    </td>
+    <td>
+     <img src="https://github.com/MarcosConforti/HorocopeApp/blob/master/app/src/main/res/drawable/screenshot_luckyone.png" alt="Lucky One"  height="500">
+    </td>
+    <td>
+     <img src="https://github.com/MarcosConforti/HorocopeApp/blob/master/app/src/main/res/drawable/screenshot_luckytwo.png" alt="Lucky Two"  height="500">
+    </td>
+  </tr>
+</table>
 
 ## Sobre Aris.
 
