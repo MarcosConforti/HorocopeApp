@@ -72,6 +72,7 @@ class DetailActivity : AppCompatActivity() {
         binding.progressBar.isVisible = false
         binding.tvTitle.text = state.sign
         binding.tvDetail.text = state.data
+
        val image = when(state.horoscopeInfo){
             Aries -> R.drawable.detail_aries
             Taurus -> R.drawable.detail_taurus

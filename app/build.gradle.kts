@@ -35,8 +35,8 @@ android {
         }
         getByName("debug"){
             isDebuggable = true
-            resValue("string","marcos", "[DEBUG] HoroscopeApp")
-            buildConfigField("String","BASE_URL", "\"https://newastro.debug.app/\"")
+            resValue("string","marcosDEBUG", "[DEBUG] HoroscopeApp")
+            buildConfigField("String","BASE_URL", "\"https://newastro.vercel.app/\"")
         }
     }
     compileOptions {
