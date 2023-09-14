@@ -1,5 +1,6 @@
 package com.marcosconforti.horocopeapp.data.network
 
+import com.marcosconforti.horocopeapp.BuildConfig.BASE_URL
 import com.marcosconforti.horocopeapp.data.RepositoryImpl
 import com.marcosconforti.horocopeapp.data.core.interceptors.AuthInterceptor
 import com.marcosconforti.horocopeapp.domain.Repository
@@ -22,7 +23,7 @@ object NetworkModule {
     fun providesRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit
             .Builder()
-            .baseUrl("https://newastro.vercel.app/")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
