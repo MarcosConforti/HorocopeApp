@@ -24,6 +24,13 @@ El temario del curso:
 
 ---
 
+## Imagenes
+
+![Home](https://github.com/MarcosConforti/HorocopeApp/blob/master/app/src/main/res/drawable/screenshot_home.png).
+![Detail](https://github.com/MarcosConforti/HorocopeApp/blob/master/app/src/main/res/drawable/screenshot_detail.png).
+![LuckReverse](https://github.com/MarcosConforti/HorocopeApp/blob/master/app/src/main/res/drawable/screenshot_luckyone.png).
+![LuckFront](https://github.com/MarcosConforti/HorocopeApp/blob/master/app/src/main/res/drawable/screenshot_luckytwo.png).
+
 ## Sobre Aris.
 
 * **Twitch**
@@ -41,4 +48,4 @@ El temario del curso:
 
 ---
 
-## Imagenes
+
